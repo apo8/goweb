@@ -6,6 +6,12 @@ import (
 	"net/http"
 )
 
+//Post is
+type Post struct {
+	User    string
+	Threads []string
+}
+
 func writeExample(w http.ResponseWriter, r *http.Request) {
 	str := `<html>
 	<head><title>Go Web Programing</title></head>
