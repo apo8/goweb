@@ -6,12 +6,6 @@ import (
 	_ "github.com/lib/pq"
 )
 
-type Post struct {
-	Id      int
-	Content string
-	Author  string
-}
-
 var Db *sql.DB
 
 func init() {
@@ -47,8 +41,4 @@ func (post *Post) update() (err error) {
 func (post *Post) delete() (err error) {
 	_, err = Db.Exec("delete from posts where id = $1", post.Id)
 	return
-}
-
-func main() {
-
 }
